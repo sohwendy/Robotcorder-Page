@@ -2,7 +2,7 @@
   "name": "Robotcorder-Page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sohwendy.github.io/Robotcorder-Page",
+  "homepage": ".",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
