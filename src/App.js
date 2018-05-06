@@ -10,6 +10,9 @@ import Heading from './Heading';
 import Video from './Video';
 import Code from './Code';
 import { Button, Container, Icon, Menu, Responsive, Segment, Visibility } from 'semantic-ui-react';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-88380525-1');
 
 const badges = [
   {
@@ -151,6 +154,7 @@ const featureIcons = [
         href='https://github.com/sohwendy/robotcorder'
         style={{marginLeft: '2em'}}
         aria-label='Star sohwendy/robotcorder on GitHub'
+        onClick={() => ReactGA.event({category: 'page', action: 'star'})}
     >
       <Icon name='star' />
       Star
@@ -164,6 +168,7 @@ const featureIcons = [
         href='https://chrome.google.com/webstore/detail/robotcorder/ifiilbfgcemdapeibjfohnfpfmfblmpd/reviews?hl=en'
         style={{marginLeft: '1em'}}
         aria-label='Rate in chrome web store'
+        onClick={() => ReactGA.event({category: 'page', action: 'rate'})}
     >
       <Icon name='star' />
       Rate it
@@ -299,6 +304,7 @@ const section = (screen) => {
   )
 };
 
+ReactGA.pageview('Github Page');
 const App = () => (
   <div>
     <DisplayContainer screen='desktop'>{section('desktop')}</DisplayContainer>

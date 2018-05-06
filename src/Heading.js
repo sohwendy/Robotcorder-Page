@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react';
+import ReactGA from 'react-ga';
 import logo from './assets/logo-128.svg';
 import './Heading.css';
 import { Container, Header, Image, List, Button, Icon } from 'semantic-ui-react';
-
 
 const STYLE = {
   desktop: {
@@ -51,7 +51,7 @@ const Heading = ({ screen, content, badges }) => (
       >
         { content.description() }
       </Header>
-      <Button primary size='huge' style={{ marginTop: '1em' }} href={ content.link }>
+      <Button primary size='huge' style={{ marginTop: '1em' }} href={ content.link } onClick={() => ReactGA.event({category: 'page', action: 'store'})}>
         Try it now
         <Icon name='right arrow' />
       </Button>
